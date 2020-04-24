@@ -5,7 +5,6 @@ long long sumNumbers(long long firstNumber, long long finalNumber);
 double calculateTime(clock_t initial, clock_t final);
 
 void main() {
-
     clock_t initial, final;
 
     initial = clock();
@@ -29,7 +28,7 @@ long long sumNumbers (long long firstNumber, long long finalNumber) {
 }
 
 double calculateTime (clock_t initial, clock_t final) {
-    double Time = final - initial / CLOCKS_PER_SEC;
+    double Time = ((double)(final - initial) / CLOCKS_PER_SEC) * 1000;
 
     return Time;
 }

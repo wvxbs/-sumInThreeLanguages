@@ -1,7 +1,4 @@
-from timeit import default_timer as timer
-
-initial = timer()
-final = 0
+import time
 
 def sumNumber(firstNumber,finalNumber):
     i = 0
@@ -14,10 +11,14 @@ def sumNumber(firstNumber,finalNumber):
     return FirstNumber
 
 def main():
+    initial = time.time()
+    final = 0
+
     result = sumNumber(0, 1000000)
     print("Resultado:", result)
 
-    final = (timer() - initial) * 10
+    final = (time.time() - initial)  * 1000
 
-    print("Tempo Decorrido:", final, "Segundos")
+    print("Tempo Decorrido:", final, "Milissegundos")
+
 main()

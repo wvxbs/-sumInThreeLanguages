@@ -1,5 +1,3 @@
-$initial = get-date -Format ss
-
 function sumNumber{
     Param ([long]$firstNumber,[long]$lastNumber)
 
@@ -13,13 +11,14 @@ function sumNumber{
 }
 
 function main {
+    $initial = [Diagnostics.Stopwatch]::StartNew()
+
     $result = sumNumber -firstNumber 0 -lastNumber 1000001
+    
+    $initial.Stop()
 
-
-    $final = get-date -Format ss
-
-    Write-Host "Resultado: " $result
-    Write-Host "Tempo Decorrido: "  $final - $inital
+    Write-Host "Resultado: $result "
+    Write-Host "Tempo Decorrido: $($initial.ElapsedMilliseconds) Milissegundos"
     
 }
 
